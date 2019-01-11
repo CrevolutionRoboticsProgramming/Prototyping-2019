@@ -21,6 +21,17 @@ public class Drivetrain extends Subsystem
     private PigeonIMU mPigeon;
     private Controller controller = Robot.controller;
 
+    // Constants
+    private final double CPR = 4096;
+    private final double WHEEL_DIAMETER = 1.0d / 3.0d;
+    private final double DRIVE_WIDTH = 2.5;
+    private final double DEFAULT_PEAK_OUT = 1;
+    private final double DEFAULT_NOMINAL_OUT = 0;
+    private final int TALON_TIMEOUT = 100;
+    private final int PID_PRIMARY = 0, PID_AUX = 1;
+    private final int PID_SLOT_DRIVE = 0, PID_SLOT_GYRO = 1, PID_SLOT_ENC_TURN = 2;
+    private final int PIGEON_REMOTE_LEFT = 0, PIGEON_REMOTE_RIGHT = 0;
+
     private final boolean USE_SENSORS = false;
 
     public static Drivetrain getInstance()
